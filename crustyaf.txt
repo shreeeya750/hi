@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Adding two values
+#((sum=25+35))
+
+# Print the result
+#echo $sum
+
+# While loop
+i=0
+
+while [ $i -le 5 ] 
+do
+	echo Number: $i
+	((i++))
+done
+
+# For loop
+for (( counter=1; counter<=10; counter++ ))
+do
+echo -n "$counter "
+done
+
+printf "\n"
+
+# Receive input from user
+echo -n "Enter Something:"
+read something
+
+echo "You Entered $something"
+
+# If statements ("||" and "&&" for "or" and "and")
+echo -n "Enter a number: "
+read num
+
+if [[ $num -gt 10 ]]
+then
+echo "Number is greater than 10."
+elif [[ $num -eq 10 ]]
+then
+echo "Number is equal to 10."
+else
+echo "Number is less than 10."
+fi
+
+# Switch construct
+echo -n "Enter a number: "
+read num
+
+case $num in
+100)
+echo "Hundred!!!" ;;
+200)
+echo "Double Hundred!!!" ;;
+*) # All inputs other than 100 and 200
+echo "Neither 100 nor 200" ;;
+esac
+
+# Command line arguments
+echo "Total arguments: $#"
+echo "First Argument = $1"
+echo "Second Argument = $2"
